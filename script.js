@@ -89,14 +89,22 @@ document.addEventListener('DOMContentLoaded', function(event) {
   // You will have to create a new <div> with class of .blog-post, a new <h2> with text, and a new <p> with some text.
   // Think about what order you want to create the elements, and what order you want to append them in.
   function createNewBlogPost() {
+    let para = document.createElement("p");
+    let content = document.createTextNode("I fly my car off the bridge!")
+    para.appendChild(content);
+
+    let title = document.createElement("h1");
+    let node = document.createTextNode("Hunan");
+    title.appendChild(node);
+
+
     let newDiv = document.createElement("div");
     newDiv.setAttribute("class", "blog-post purple");
-    let para = document.createElement("p");
-    let content = document.createTextNode("this is my new div")
-    para.appendChild(content);
-    // newDiv.innerHTML = "this is my new div";
+    newDiv.setAttribute("id", "div6");
+
+    newDiv.appendChild(title);
+    newDiv.appendChild(para);
     document.querySelector('.main').appendChild(newDiv);
-    document.querySelector('.main').appendChild(para);
   }
   createNewBlogPost();
 
